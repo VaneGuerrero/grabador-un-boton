@@ -1,0 +1,18 @@
+Carpeta «ffmpeg» del grabador de Isola 10 Aniversario
+=====================================================
+Qué es: una copia propia del conversor de vídeo (ffmpeg.wasm). La página la usa SOLO en los navegadores que
+no graban MP4 de forma nativa (algunos Android y Firefox). Así no depende de una CDN externa el día del evento.
+
+Cómo usarla: súbela al repositorio de GitHub JUNTO a index.html, de modo que quede así:
+    index.html
+    ffmpeg/ffmpeg.min.js
+    ffmpeg/ffmpeg-core.js
+    ffmpeg/ffmpeg-core.wasm        (24 MB)
+    ffmpeg/ffmpeg-core.worker.js
+Si la carpeta no está, la página usa automáticamente la CDN de jsDelivr (como antes): no se rompe nada.
+(LEEME.txt no hace falta subirlo.)
+
+Origen (archivos oficiales de npm, sin modificar): @ffmpeg/ffmpeg 0.11.6 (licencia MIT) y @ffmpeg/core-st 0.11.1
+(ffmpeg + x264, GPL v2 o posterior).
+Nota: ffmpeg-core.worker.js viene vacío (0 bytes) en el paquete original; aquí lleva un comentario para que
+GitHub permita subirlo. El núcleo de un solo hilo no lo utiliza.
